@@ -218,7 +218,7 @@ include mxe.mk
 endif
 
 ## LLVM targets
-include llvm.mk
+# include llvm.mk
 
 ## Android targets
 ifdef ENABLE_ANDROID
@@ -247,4 +247,4 @@ include desktop.mk
 endif
 
 ## WASM targets
-include wasm.mk
+# include wasm.mk

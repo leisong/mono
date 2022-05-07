@@ -275,7 +275,7 @@ endef
 
 # on Windows, we use the AndroidHostMxeTemplate, instead
 ifneq ($(UNAME),Windows)
-$(eval $(call AndroidHostTemplate,host-$(UNAME)))
+# $(eval $(call AndroidHostTemplate,host-$(UNAME)))
 endif
 
 ##
@@ -337,8 +337,8 @@ $$(eval $$(call RuntimeTemplate,android,$(1),$(2)-w64-mingw32))
 endef
 
 ifneq ($(UNAME),Windows)
-$(eval $(call AndroidHostMxeTemplate,host-mxe-Win32,i686))
-$(eval $(call AndroidHostMxeTemplate,host-mxe-Win64,x86_64))
+# $(eval $(call AndroidHostMxeTemplate,host-mxe-Win32,i686))
+# $(eval $(call AndroidHostMxeTemplate,host-mxe-Win64,x86_64))
 else
 # on Windows the MinGW-built Mono is the host Mono.  But we have to use the cross template
 # because 'gcc' is the cygwin or WSL compiler, while the x86_64-w64-mingw32-gcc is the windows native compiler.
@@ -408,10 +408,10 @@ $(eval $(call AndroidCrossTemplateStub,cross-arm64,x86_64,aarch64-v8a,arm64-v8a,
 $(eval $(call AndroidCrossTemplateStub,cross-x86,x86_64,i686,x86,llvm-llvm64,i686-none-linux-android))
 $(eval $(call AndroidCrossTemplateStub,cross-x86_64,x86_64,x86_64,x86_64,llvm-llvm64,x86_64-none-linux-android))
 else
-$(eval $(call AndroidCrossTemplate,cross-arm,x86_64,armv7,armeabi-v7a,llvm-llvm64,armv7-none-linux-androideabi))
-$(eval $(call AndroidCrossTemplate,cross-arm64,x86_64,aarch64-v8a,arm64-v8a,llvm-llvm64,aarch64-v8a-linux-android))
-$(eval $(call AndroidCrossTemplate,cross-x86,x86_64,i686,x86,llvm-llvm64,i686-none-linux-android))
-$(eval $(call AndroidCrossTemplate,cross-x86_64,x86_64,x86_64,x86_64,llvm-llvm64,x86_64-none-linux-android))
+# $(eval $(call AndroidCrossTemplate,cross-arm,x86_64,armv7,armeabi-v7a,llvm-llvm64,armv7-none-linux-androideabi))
+# $(eval $(call AndroidCrossTemplate,cross-arm64,x86_64,aarch64-v8a,arm64-v8a,llvm-llvm64,aarch64-v8a-linux-android))
+# $(eval $(call AndroidCrossTemplate,cross-x86,x86_64,i686,x86,llvm-llvm64,i686-none-linux-android))
+# $(eval $(call AndroidCrossTemplate,cross-x86_64,x86_64,x86_64,x86_64,llvm-llvm64,x86_64-none-linux-android))
 endif
 
 ##
@@ -485,10 +485,10 @@ $$(eval $$(call CrossRuntimeTemplateStub,android,$(1),$(2)-w64-mingw32,$(3)-linu
 endef
 
 ifneq ($(UNAME),Windows)
-$(eval $(call AndroidCrossMXETemplate,cross-arm-win,x86_64,armv7,armeabi-v7a,llvm-llvmwin64,armv7-none-linux-androideabi))
-$(eval $(call AndroidCrossMXETemplate,cross-arm64-win,x86_64,aarch64-v8a,arm64-v8a,llvm-llvmwin64,aarch64-v8a-linux-android))
-$(eval $(call AndroidCrossMXETemplate,cross-x86-win,x86_64,i686,x86,llvm-llvmwin64,i686-none-linux-android))
-$(eval $(call AndroidCrossMXETemplate,cross-x86_64-win,x86_64,x86_64,x86_64,llvm-llvmwin64,x86_64-none-linux-android))
+# $(eval $(call AndroidCrossMXETemplate,cross-arm-win,x86_64,armv7,armeabi-v7a,llvm-llvmwin64,armv7-none-linux-androideabi))
+# $(eval $(call AndroidCrossMXETemplate,cross-arm64-win,x86_64,aarch64-v8a,arm64-v8a,llvm-llvmwin64,aarch64-v8a-linux-android))
+# $(eval $(call AndroidCrossMXETemplate,cross-x86-win,x86_64,i686,x86,llvm-llvmwin64,i686-none-linux-android))
+# $(eval $(call AndroidCrossMXETemplate,cross-x86_64-win,x86_64,x86_64,x86_64,llvm-llvmwin64,x86_64-none-linux-android))
 else
 $(eval $(call AndroidCrossMXETemplateStub,cross-arm-win,x86_64,armv7,armeabi-v7a,llvm-llvmwin64,armv7-none-linux-androideabi))
 $(eval $(call AndroidCrossMXETemplateStub,cross-arm64-win,x86_64,aarch64-v8a,arm64-v8a,llvm-llvmwin64,aarch64-v8a-linux-android))
