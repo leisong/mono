@@ -63,7 +63,7 @@ DEV_CFLAGS = \
 	-isysroot $(DEV_SYSROOT) \
 	-std=gnu11 \
 	-fobjc-arc \
-	-mios-simulator-version-min=10.1 \
+	-miphoneos-version-min=10.1 \
 	-g \
 	-fPIC \
 	-DDEVICE=1
