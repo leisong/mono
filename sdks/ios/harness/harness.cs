@@ -170,8 +170,8 @@ public class Harness
 		Console.WriteLine ("Running: " + exe + " " + args);
 		process = Process.Start (exe, args);
 		process.WaitForExit ();
-		if (process.ExitCode != 0)
-			Environment.Exit (1);
+		// if (process.ExitCode != 0)
+		// 	Environment.Exit (1);
 
 		// Launch new app
 		exe = "xcrun";
